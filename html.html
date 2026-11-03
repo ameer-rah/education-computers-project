@@ -1,0 +1,211 @@
+<!doctype html>
+<!-- Lesson 2: how HTML describes the structure of a page. -->
+<html lang="en">
+  <head>
+    <!-- Page information for the browser and search engines. None of this appears on the page. -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="description" content="Build the Web: an approachable five-page guide to how websites work, HTML, CSS, and JavaScript.">
+    <title>HTML Basics | Build the Web</title>
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+
+    <!--
+      Skip link: stays off screen until a keyboard user presses Tab, then lets them jump straight to
+      the main content.
+    -->
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    <!--
+      Site header: the logo, author line, and navigation, repeated on every page.
+      aria-current="page" marks the page being viewed, and styles.css uses it to highlight that
+      link.
+    -->
+    <header class="site-header">
+      <div class="header-inner shell">
+        <a class="brand" href="index.html" aria-label="Build the Web, home">
+          <span class="brand-mark" aria-hidden="true">&lt;/&gt;</span>
+          <span>Build the Web</span>
+        </a>
+        <span class="byline">An educational site by Ameer Rahman</span>
+        <nav aria-label="Main navigation">
+          <a href="index.html">Home</a>
+          <a href="how-web-works.html">How the Web Works</a>
+          <a href="html.html" aria-current="page">HTML Basics</a>
+          <a href="css.html">CSS Basics</a>
+          <a href="javascript.html">JavaScript Basics</a>
+        </nav>
+      </div>
+    </header>
+
+    <!--
+      Hero banner: the large dark area at the top that introduces this page. aria-hidden hides the
+      decorative symbol from screen readers.
+    -->
+    <section class="hero">
+      <div class="hero-inner shell">
+        <span class="eyebrow">LESSON 02 · 03 / 05</span>
+        <h1>HTML gives a website its structure</h1>
+        <p class="hero-lead">
+          Before you worry about colors or animations, you need content. HTML tells your browser
+          what that content is.
+        </p>
+        <div class="hero-meta">
+          <span class="hero-chip">Beginner-friendly</span>
+          <span class="hero-chip">No experience needed</span>
+        </div>
+        <div class="hero-visual" aria-hidden="true">&lt; / &gt;</div>
+      </div>
+    </section>
+
+    <!--
+      Main content. Each section's aria-labelledby points to the id of its heading, so screen
+      readers can announce the section's name.
+    -->
+    <main class="main shell" id="main">
+
+      <!-- Section 01: Think in elements -->
+      <section class="section" aria-labelledby="elements">
+        <div class="section-heading">
+          <span class="section-number">01 / BUILDING BLOCKS</span>
+          <h2 id="elements">Think in elements</h2>
+        </div>
+        <p>
+          HTML stands for <strong>HyperText Markup Language</strong>. It is not a programming
+          language in the same sense as JavaScript. Instead, it uses elements to describe pieces of
+          a page. An opening tag usually marks where an element starts, and a closing tag marks
+          where it ends.
+        </p>
+        <p>
+          For example, a heading tells readers what a section is about, a paragraph holds an
+          explanation, and a link leads to another page. When the structure is clear, the page is
+          easier for people and assistive technologies to understand.
+        </p>
+
+        <!--
+          Code sample: pre keeps the line breaks and spaces exactly as typed, and &lt; and &gt;
+          display as angle brackets instead of being read as real tags.
+        -->
+        <div class="code-card">
+          <div class="code-top">
+            <span>MY-FIRST-PAGE.HTML</span>
+            <span>HTML</span>
+          </div>
+          <pre><code>&lt;h1&gt;Welcome to my first page&lt;/h1&gt;
+&lt;p&gt;I am learning how websites work.&lt;/p&gt;
+&lt;a href="https://example.com"&gt;Visit a website&lt;/a&gt;</code></pre>
+        </div>
+        <p>
+          Notice the pattern: the <code>&lt;h1&gt;</code> element is a main heading,
+          <code>&lt;p&gt;</code> holds a paragraph, and <code>&lt;a&gt;</code> creates a link. The
+          <code>href</code> attribute tells the browser where that link should go.
+        </p>
+      </section>
+
+      <!-- Section 02: What an HTML file looks like -->
+      <section class="section" aria-labelledby="document">
+        <div class="section-heading">
+          <span class="section-number">02 / THE FULL PAGE</span>
+          <h2 id="document">What an HTML file looks like</h2>
+        </div>
+
+        <!--
+          Code sample: pre keeps the line breaks and spaces exactly as typed, and &lt; and &gt;
+          display as angle brackets instead of being read as real tags.
+        -->
+        <div class="code-card">
+          <div class="code-top">
+            <span>INDEX.HTML</span>
+            <span>HTML</span>
+          </div>
+          <pre><code>&lt;!doctype html&gt;
+&lt;html lang="en"&gt;
+  &lt;head&gt;
+    &lt;meta charset="utf-8"&gt;
+    &lt;title&gt;My First Website&lt;/title&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;h1&gt;Hello, web!&lt;/h1&gt;
+    &lt;p&gt;This page started as a text file.&lt;/p&gt;
+  &lt;/body&gt;
+&lt;/html&gt;</code></pre>
+        </div>
+        <p>
+          The <code>&lt;head&gt;</code> stores information about the document, such as its title.
+          The <code>&lt;body&gt;</code> holds the content visitors actually see. Save this as
+          <code>index.html</code>, then open it in your browser to preview it.
+        </p>
+      </section>
+
+      <!-- Section 03: Your first tiny challenge -->
+      <section class="section" aria-labelledby="exercise">
+        <div class="section-heading">
+          <span class="section-number">03 / TRY IT YOURSELF</span>
+          <h2 id="exercise">Your first tiny challenge</h2>
+        </div>
+
+        <!--
+          Numbered steps. The numbers are drawn by styles.css (see .steps li:before), not typed
+          here.
+        -->
+        <ol class="steps">
+          <li>
+            <strong>Create an HTML file</strong>
+            <span>Use a plain-text editor and name the file <code>index.html</code>.</span>
+          </li>
+          <li>
+            <strong>Add your own content</strong>
+            <span>Write a heading about something you enjoy and a paragraph explaining why.</span>
+          </li>
+          <li>
+            <strong>Open it in a browser</strong>
+            <span>Double-click the file or open it with your favorite browser.</span>
+          </li>
+          <li>
+            <strong>Make one change</strong>
+            <span>Edit the heading, save the file, and refresh the page.</span>
+          </li>
+        </ol>
+
+        <!-- Takeaway box: the key point or a small exercise. -->
+        <div class="takeaway">
+          <strong>Remember</strong>
+          <p>
+            HTML describes what the content is. The next lesson shows how CSS changes how that
+            content looks.
+          </p>
+        </div>
+      </section>
+
+      <!-- Link to the next page in the suggested reading order. -->
+      <div class="next">
+        <div>
+          <strong>KEEP EXPLORING</strong>
+          <p>CSS Basics</p>
+        </div>
+        <a href="css.html">CSS Basics <span aria-hidden="true">↗</span></a>
+      </div>
+    </main>
+
+    <!-- Site footer: repeated on every page. -->
+    <footer class="site-footer">
+      <div class="footer-inner shell">
+        <div class="footer-left">
+          <strong>Build the Web</strong>
+          <p>An introductory educational website by Ameer Rahman</p>
+          <p>
+            AI acknowledgment: ChatGPT (OpenAI, November 2026) assisted with the initial site
+            design, organization, and draft explanations. The author is responsible for reviewing
+            and personalizing the final content.
+          </p>
+        </div>
+        <div class="footer-right">
+          <a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Getting_started/Your_first_website" target="_blank" rel="noopener noreferrer">
+            Further reading: MDN Web Docs
+          </a>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

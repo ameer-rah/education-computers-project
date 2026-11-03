@@ -1,0 +1,812 @@
+/* styles.css: the one stylesheet shared by all five pages.
+
+   Contents:
+   1. Font and color variables
+   2. Base styles for plain HTML elements
+   3. Page layout and accessibility helpers
+   4. Site header and navigation
+   5. Hero banner
+   6. Page sections
+   7. Content components (cards, steps, diagram, glossary, code samples, and so on)
+   8. Site footer
+   9. Responsive rules for smaller screens */
+/* 1. FONT AND COLOR VARIABLES
+   Each value is named once here and reused with var(--name).
+   Changing a value here updates it everywhere on the site.
+
+   --font uses the font already installed on the device: San Francisco on a Mac,
+   Segoe UI on Windows, Roboto on Android. Nothing has to be downloaded. */
+:root {
+  --font: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  --bg: #f8f8f5;
+  --ink: #1b2927;
+  --muted: #54655f;
+  --dark: #112722;
+  --accent: #b9f377;
+  --line: #dce4dd;
+  --surface: #fff;
+  --soft: #f1f6ed;
+}
+
+/* 2. BASE STYLES
+   These apply to plain HTML elements before any class is involved.
+
+   border-box means an element's width includes its padding and border,
+   which makes sizes much easier to predict. */
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  font-family: var(--font);
+  color: var(--ink);
+  line-height: 1.7;
+}
+
+a {
+  color: inherit;
+}
+
+/* Shows a clear outline when someone moves through links with the keyboard. */
+a:focus-visible,
+button:focus-visible {
+  outline: 3px solid #0a8b72;
+  outline-offset: 4px;
+}
+
+h1,
+h2,
+h3,
+.brand {
+  font-family: var(--font);
+  line-height: 1.15;
+}
+
+/* clamp(min, preferred, max) lets text grow with the screen width (vw) within set limits. */
+h1 {
+  font-size: clamp(3rem, 6.2vw, 5.7rem);
+  letter-spacing: -0.02em;
+  margin: 0.25em 0 0.3em;
+  max-width: 900px;
+}
+
+h2 {
+  font-size: clamp(2rem, 3.6vw, 3.1rem);
+  letter-spacing: -0.02em;
+  margin: 8px 0 20px;
+  max-width: 740px;
+}
+
+h3 {
+  font-size: 1.35rem;
+  letter-spacing: -0.02em;
+}
+
+p {
+  font-size: 1.08rem;
+  margin: 0 0 18px;
+  max-width: 760px;
+}
+
+small {
+  font-size: 0.8rem;
+}
+
+code,
+pre {
+  font-family: ui-monospace, SFMono-Regular, Consolas, monospace;
+}
+
+p code,
+li code {
+  background: #e9eee6;
+  border-radius: 5px;
+  padding: 0.15em 0.3em;
+  font-size: 0.9em;
+}
+
+/* 3. LAYOUT AND ACCESSIBILITY HELPERS
+   .shell centers content and limits how wide it can get. */
+.shell {
+  max-width: 1220px;
+  margin: 0 auto;
+  padding: 0 32px;
+}
+
+/* Moved off screen until it receives keyboard focus. */
+.skip-link {
+  position: absolute;
+  left: -9999px;
+  background: #fff;
+  padding: 8px;
+  z-index: 20;
+}
+
+.skip-link:focus {
+  left: 12px;
+  top: 10px;
+}
+
+/* 4. SITE HEADER AND NAVIGATION */
+.site-header {
+  border-bottom: 1px solid var(--line);
+  background: rgba(248, 248, 245, 0.97);
+}
+
+.header-inner {
+  min-height: 83px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+}
+
+.brand {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 1.2rem;
+  letter-spacing: -0.02em;
+}
+
+.brand-mark {
+  border: 2px solid var(--dark);
+  border-radius: 9px;
+  width: 37px;
+  height: 37px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.35rem;
+  line-height: 1;
+}
+
+.byline {
+  font-weight: 500;
+  letter-spacing: 0.05em;
+  font-size: 0.74rem;
+  color: var(--muted);
+  text-transform: uppercase;
+}
+
+nav {
+  display: flex;
+  gap: 4px;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+}
+
+nav a {
+  font-size: 0.87rem;
+  font-weight: 600;
+  text-decoration: none;
+  border-radius: 100px;
+  padding: 9px 12px;
+  color: #39534a;
+}
+
+nav a:hover {
+  background: #e7efe4;
+}
+
+/* Highlights the link for the page being viewed. */
+nav a[aria-current="page"] {
+  background: var(--dark);
+  color: #fff;
+}
+
+/* 5. HERO BANNER */
+.hero {
+  background: var(--dark);
+  color: #f1f8f0;
+  position: relative;
+  overflow: hidden;
+}
+
+/* The decorative circle in the corner. :after creates it without any extra HTML,
+   and overflow: hidden on .hero cuts off the part outside the banner. */
+.hero:after {
+  content: "";
+  position: absolute;
+  border: 1px solid #446a52;
+  border-radius: 50%;
+  width: 620px;
+  height: 620px;
+  right: -310px;
+  top: -240px;
+  box-shadow:
+    0 0 0 80px rgba(168, 220, 138, 0.05),
+    0 0 0 160px rgba(168, 220, 138, 0.03);
+  pointer-events: none;
+}
+
+.hero-inner {
+  padding: 88px 32px 95px;
+  position: relative;
+  z-index: 1;
+}
+
+/* Small uppercase labels. */
+.eyebrow,
+.section-number,
+.pill-label {
+  font-size: 0.77rem;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  font-weight: 700;
+}
+
+.eyebrow {
+  color: var(--accent);
+}
+
+.hero-lead {
+  font-size: clamp(1.13rem, 2vw, 1.4rem);
+  color: #d9e7dc;
+  max-width: 670px;
+}
+
+.hero-meta {
+  margin-top: 32px;
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.hero-chip {
+  border: 1px solid #5d7f68;
+  border-radius: 30px;
+  padding: 6px 14px;
+  color: #dce7d9;
+  font-size: 0.76rem;
+  text-transform: uppercase;
+  letter-spacing: 0.09em;
+}
+
+.hero-visual {
+  position: absolute;
+  bottom: 40px;
+  right: 60px;
+  opacity: 0.19;
+  font-size: 7rem;
+  font-family: monospace;
+  font-weight: 700;
+  letter-spacing: -0.13em;
+  pointer-events: none;
+}
+
+/* 6. PAGE SECTIONS */
+.main {
+  padding: 16px 32px 100px;
+}
+
+.section {
+  padding: 64px 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.section:last-of-type {
+  border: 0;
+}
+
+.section-heading {
+  margin-bottom: 28px;
+}
+
+.section-number {
+  color: #517560;
+}
+
+/* 7. CONTENT COMPONENTS
+
+   Feature cards. minmax(0, 1fr) makes equal columns that can shrink on narrow screens. */
+.feature-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+  margin: 32px 0 0;
+}
+
+.feature,
+.simple-card {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  padding: 27px;
+}
+
+.feature-symbol {
+  font-family: monospace;
+  font-size: 1.6rem;
+  font-weight: 700;
+  display: inline-flex;
+  background: var(--soft);
+  border-radius: 12px;
+  height: 52px;
+  min-width: 52px;
+  align-items: center;
+  justify-content: center;
+  padding: 0 12px;
+}
+
+.feature h3 {
+  margin: 21px 0 8px;
+}
+
+.feature p,
+.simple-card p {
+  font-size: 0.99rem;
+}
+
+.feature a {
+  font-size: 0.93rem;
+  font-weight: 700;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
+/* Quote card */
+.quote-card {
+  border-radius: 20px;
+  background: #e3efd9;
+  padding: 34px 38px;
+  margin-top: 32px;
+}
+
+.quote-card p {
+  font-family: var(--font);
+  font-size: clamp(1.45rem, 2.4vw, 2.1rem);
+  line-height: 1.4;
+  letter-spacing: -0.02em;
+}
+
+.quote-card span {
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  color: #436449;
+}
+
+/* Numbered steps. A CSS counter counts each li and :before displays the number. */
+.steps {
+  list-style: none;
+  counter-reset: lesson;
+  padding: 0;
+  max-width: 850px;
+  margin: 25px 0;
+}
+
+.steps li {
+  counter-increment: lesson;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding: 21px 18px 21px 75px;
+  position: relative;
+  border-bottom: 1px solid var(--line);
+}
+
+.steps li:before {
+  content: counter(lesson, decimal-leading-zero);
+  position: absolute;
+  left: 8px;
+  top: 22px;
+  background: var(--dark);
+  color: var(--accent);
+  font:
+    700 0.85rem var(--font);
+  width: 40px;
+  height: 40px;
+  border-radius: 12px;
+  display: grid;
+  place-items: center;
+}
+
+.steps strong {
+  font-size: 1.07rem;
+}
+
+.steps span {
+  color: var(--muted);
+}
+
+/* Request and response diagram */
+.diagram {
+  display: flex;
+  align-items: center;
+  gap: 22px;
+  justify-content: center;
+  border-radius: 18px;
+  padding: 42px 20px;
+  background: #e8f1e5;
+  margin: 28px 0 25px;
+  max-width: 850px;
+}
+
+.diagram-node {
+  background: white;
+  border: 1px solid #c9d7c9;
+  border-radius: 14px;
+  padding: 22px 28px;
+  min-width: 210px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  align-items: center;
+  text-align: center;
+}
+
+.diagram-icon {
+  border-radius: 100px;
+  background: var(--dark);
+  color: var(--accent);
+  font-weight: 700;
+  font-size: 0.75rem;
+  padding: 8px 11px;
+}
+
+.diagram-arrows {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: #45745a;
+  display: flex;
+  flex-direction: column;
+  gap: 11px;
+  white-space: nowrap;
+}
+
+.diagram-node small {
+  color: var(--muted);
+}
+
+/* Two-column and three-column card layouts */
+.split-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+  margin: 24px 0;
+}
+
+.split-grid.three {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.pill-label {
+  color: #3f7556;
+}
+
+.simple-card h3 {
+  margin: 15px 0 8px;
+}
+
+/* Glossary */
+.glossary {
+  max-width: 850px;
+}
+
+.glossary > div {
+  padding: 16px 0;
+  border-bottom: 1px solid var(--line);
+  display: grid;
+  grid-template-columns: 180px 1fr;
+  gap: 20px;
+}
+
+.glossary dt {
+  font-weight: 700;
+  font-size: 1.1rem;
+}
+
+.glossary dd {
+  margin: 0;
+  color: var(--muted);
+}
+
+/* Takeaway box */
+.takeaway {
+  background: #e8f0e5;
+  border-left: 5px solid #6aa66d;
+  border-radius: 0 15px 15px 0;
+  margin: 32px 0 10px;
+  padding: 22px 28px;
+  max-width: 850px;
+}
+
+.takeaway strong {
+  font-family: var(--font);
+  font-size: 1.18rem;
+}
+
+.takeaway p {
+  margin: 8px 0 0;
+  font-size: 1rem;
+}
+
+/* Code samples. overflow-x: auto lets long lines scroll instead of breaking the layout. */
+.code-card {
+  background: #142722;
+  border-radius: 18px;
+  margin: 26px 0;
+  overflow: hidden;
+  max-width: 860px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.07);
+}
+
+.code-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 13px 22px;
+  border-bottom: 1px solid #345043;
+  color: #c4d8c5;
+  font-size: 0.73rem;
+  letter-spacing: 0.09em;
+  font-weight: 700;
+}
+
+.code-card pre {
+  margin: 0;
+  padding: 28px 24px;
+  overflow-x: auto;
+  font-size: 0.95rem;
+  line-height: 1.8;
+  color: #d9efda;
+}
+
+/* Before and after CSS demo */
+.before-after {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  max-width: 870px;
+  margin: 30px 0;
+}
+
+.demo-box {
+  background: white;
+  border-radius: 16px;
+  padding: 26px;
+  min-height: 200px;
+  border: 1px solid var(--line);
+}
+
+.demo-box > span {
+  font-size: 0.72rem;
+  letter-spacing: 0.08em;
+  color: var(--muted);
+  font-weight: 700;
+}
+
+.demo-box .mini-title {
+  margin: 14px 0;
+  font-size: 1.7rem;
+  font-weight: 700;
+}
+
+.demo-plain .mini-title {
+  font:
+    700 1.2rem Arial,
+    sans-serif;
+}
+
+.demo-plain p {
+  font:
+    1rem Arial,
+    sans-serif;
+}
+
+.demo-styled {
+  background: #1f584c;
+  color: #f3f8ed;
+}
+
+.demo-styled .mini-title {
+  font-size: 2.1rem;
+  letter-spacing: -0.02em;
+}
+
+.demo-styled p {
+  color: #e1eee4;
+}
+
+.demo-styled > span {
+  color: #beebbd;
+}
+
+/* Resource links */
+.resources {
+  border: 1px solid var(--line);
+  padding: 26px 30px;
+  background: white;
+  border-radius: 18px;
+  max-width: 860px;
+  margin: 30px 0;
+}
+
+.resources h3 {
+  margin: 0 0 10px;
+}
+
+.resources ul {
+  margin: 12px 0 0;
+  padding-left: 20px;
+}
+
+.resources li {
+  padding: 6px 0;
+}
+
+.resources a {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  font-weight: 600;
+}
+
+/* Next page banner */
+.next {
+  margin: 10px 0 0;
+  border-radius: 20px;
+  background: var(--dark);
+  color: white;
+  padding: 34px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+}
+
+.next p {
+  margin: 4px 0;
+  color: #bad5c0;
+}
+
+.next a {
+  background: var(--accent);
+  color: #163423;
+  text-decoration: none;
+  font-weight: 700;
+  padding: 12px 22px;
+  border-radius: 100px;
+  white-space: nowrap;
+}
+
+/* 8. SITE FOOTER */
+.site-footer {
+  border-top: 1px solid var(--line);
+  padding: 34px 0 50px;
+  background: #f0f3ee;
+}
+
+.footer-inner {
+  display: flex;
+  justify-content: space-between;
+  gap: 30px;
+  align-items: flex-start;
+}
+
+.footer-inner p {
+  font-size: 0.82rem;
+  color: #56655c;
+  max-width: 760px;
+  margin: 4px 0;
+}
+
+.footer-left strong {
+  font-family: var(--font);
+  letter-spacing: -0.02em;
+}
+
+.footer-right {
+  font-size: 0.85rem;
+  text-align: right;
+}
+
+.footer-right a {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+/* 9. RESPONSIVE RULES
+   A media query only applies while its condition is true.
+
+   Tablets and small laptops: stack the header and the card grids. */
+@media (max-width: 850px) {
+  .header-inner {
+    align-items: flex-start;
+    flex-direction: column;
+    padding-top: 17px;
+    padding-bottom: 16px;
+  }
+  .feature-grid,
+  .split-grid.three {
+    grid-template-columns: 1fr;
+  }
+  .hero-visual {
+    display: none;
+  }
+  .hero-inner {
+    padding-top: 75px;
+    padding-bottom: 80px;
+  }
+}
+
+/* Phones: use one column throughout and tighten the spacing. */
+@media (max-width: 650px) {
+  .shell {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+  .main {
+    padding-bottom: 60px;
+  }
+  .hero-inner {
+    padding: 63px 20px 70px;
+  }
+  .section {
+    padding: 44px 0;
+  }
+  .feature-grid,
+  .split-grid,
+  .before-after {
+    grid-template-columns: 1fr;
+  }
+  .diagram {
+    flex-direction: column;
+  }
+  .diagram-arrows {
+    transform: rotate(90deg);
+    margin: 10px 0;
+  }
+  .diagram-node {
+    min-width: 80%;
+  }
+  .glossary > div {
+    grid-template-columns: 1fr;
+    gap: 3px;
+  }
+  .next {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+  .footer-inner {
+    flex-direction: column;
+  }
+  .footer-right {
+    text-align: left;
+  }
+  .byline {
+    display: none;
+  }
+  nav {
+    justify-content: flex-start;
+  }
+  nav a {
+    font-size: 0.82rem;
+    padding: 7px 10px;
+  }
+  .code-card pre {
+    font-size: 0.82rem;
+  }
+  .quote-card {
+    padding: 26px;
+  }
+  .feature {
+    padding: 23px;
+  }
+}
+
+/* Turns off smooth scrolling for people who ask their device to reduce motion. */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}

@@ -1,0 +1,206 @@
+<!doctype html>
+<!-- Lesson 1: what happens between typing an address and seeing a page. -->
+<html lang="en">
+  <head>
+    <!-- Page information for the browser and search engines. None of this appears on the page. -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="description" content="Build the Web: an approachable five-page guide to how websites work, HTML, CSS, and JavaScript.">
+    <title>How the Web Works | Build the Web</title>
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+
+    <!--
+      Skip link: stays off screen until a keyboard user presses Tab, then lets them jump straight to
+      the main content.
+    -->
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    <!--
+      Site header: the logo, author line, and navigation, repeated on every page.
+      aria-current="page" marks the page being viewed, and styles.css uses it to highlight that
+      link.
+    -->
+    <header class="site-header">
+      <div class="header-inner shell">
+        <a class="brand" href="index.html" aria-label="Build the Web, home">
+          <span class="brand-mark" aria-hidden="true">&lt;/&gt;</span>
+          <span>Build the Web</span>
+        </a>
+        <span class="byline">An educational site by Ameer Rahman</span>
+        <nav aria-label="Main navigation">
+          <a href="index.html">Home</a>
+          <a href="how-web-works.html" aria-current="page">How the Web Works</a>
+          <a href="html.html">HTML Basics</a>
+          <a href="css.html">CSS Basics</a>
+          <a href="javascript.html">JavaScript Basics</a>
+        </nav>
+      </div>
+    </header>
+
+    <!--
+      Hero banner: the large dark area at the top that introduces this page. aria-hidden hides the
+      decorative symbol from screen readers.
+    -->
+    <section class="hero">
+      <div class="hero-inner shell">
+        <span class="eyebrow">LESSON 01 · 02 / 05</span>
+        <h1>What happens when you open a website</h1>
+        <p class="hero-lead">
+          Typing an address into your browser may feel instant, but a lot happens behind the scenes.
+          Here is the simple version.
+        </p>
+        <div class="hero-meta">
+          <span class="hero-chip">Beginner-friendly</span>
+          <span class="hero-chip">No experience needed</span>
+        </div>
+        <div class="hero-visual" aria-hidden="true">&lt; / &gt;</div>
+      </div>
+    </section>
+
+    <!--
+      Main content. Each section's aria-labelledby points to the id of its heading, so screen
+      readers can announce the section's name.
+    -->
+    <main class="main shell" id="main">
+
+      <!-- Section 01: The journey of a web page -->
+      <section class="section" aria-labelledby="journey">
+        <div class="section-heading">
+          <span class="section-number">01 / FROM CLICK TO PAGE</span>
+          <h2 id="journey">The journey of a web page</h2>
+        </div>
+        <p>
+          Your <strong>browser</strong> is the app you use to explore the web. A
+          <strong>server</strong> is a computer or service that stores and delivers website files.
+          When you follow a link, the browser requests information from a server, receives a
+          response, and uses that information to display the page.
+        </p>
+
+        <!-- Diagram built from plain HTML and CSS: browser, arrows, then server. -->
+        <div class="diagram" aria-label="A browser sends a request to a server, and the server sends a response back">
+          <div class="diagram-node">
+            <span class="diagram-icon">01</span>
+            <strong>Your browser</strong>
+            <small>Requests a page</small>
+          </div>
+          <div class="diagram-arrows" aria-hidden="true">
+            <span>Request →</span>
+            <span>← Response</span>
+          </div>
+          <div class="diagram-node">
+            <span class="diagram-icon">02</span>
+            <strong>Web server</strong>
+            <small>Returns site files</small>
+          </div>
+        </div>
+        <p>
+          You can think of the address as directions to a destination, the browser as the visitor,
+          and the server as the place that sends the requested content. The comparison is not
+          perfect, but it helps explain why a website needs to be published somewhere before other
+          people can visit it.
+        </p>
+      </section>
+
+      <!-- Section 02: Front end and back end -->
+      <section class="section" aria-labelledby="parts">
+        <div class="section-heading">
+          <span class="section-number">02 / WHO DOES WHAT</span>
+          <h2 id="parts">Front end and back end</h2>
+        </div>
+
+        <!-- Side-by-side comparison cards. -->
+        <div class="split-grid">
+          <div class="simple-card">
+            <span class="pill-label">FRONT END</span>
+            <h3>What you see and use</h3>
+            <p>
+              The front end is the part shown in the browser: the navigation, buttons, page layout,
+              and text. HTML, CSS, and JavaScript are its basic building blocks.
+            </p>
+          </div>
+          <div class="simple-card">
+            <span class="pill-label">BACK END</span>
+            <h3>What supports the experience</h3>
+            <p>
+              The back end can handle things such as saved accounts, stored information, and
+              requests to a database. Not every simple website needs one.
+            </p>
+          </div>
+        </div>
+        <p>
+          For example, a course-planning application may display schedules and buttons on the front
+          end while using a server and database to retrieve course information. This is one reason
+          web development combines visual design with logical problem-solving.
+        </p>
+      </section>
+
+      <!-- Section 03: Four words worth knowing -->
+      <section class="section" aria-labelledby="terms">
+        <div class="section-heading">
+          <span class="section-number">03 / QUICK VOCABULARY</span>
+          <h2 id="terms">Four words worth knowing</h2>
+        </div>
+
+        <!-- Glossary: in a description list, dt is the term and dd is its definition. -->
+        <dl class="glossary">
+          <div>
+            <dt>URL</dt>
+            <dd>The web address that identifies a page or resource.</dd>
+          </div>
+          <div>
+            <dt>Domain</dt>
+            <dd>The memorable name people type to find a site.</dd>
+          </div>
+          <div>
+            <dt>Hosting</dt>
+            <dd>The service that makes website files accessible online.</dd>
+          </div>
+          <div>
+            <dt>Responsive design</dt>
+            <dd>A layout that adjusts to different screen sizes.</dd>
+          </div>
+        </dl>
+
+        <!-- Takeaway box: the key point or a small exercise. -->
+        <div class="takeaway">
+          <strong>Try thinking like a developer</strong>
+          <p>
+            Open a website you visit often. Which parts are visible interface elements? Which
+            features might need information stored somewhere else?
+          </p>
+        </div>
+      </section>
+
+      <!-- Link to the next page in the suggested reading order. -->
+      <div class="next">
+        <div>
+          <strong>KEEP EXPLORING</strong>
+          <p>HTML Basics</p>
+        </div>
+        <a href="html.html">HTML Basics <span aria-hidden="true">↗</span></a>
+      </div>
+    </main>
+
+    <!-- Site footer: repeated on every page. -->
+    <footer class="site-footer">
+      <div class="footer-inner shell">
+        <div class="footer-left">
+          <strong>Build the Web</strong>
+          <p>An introductory educational website by Ameer Rahman</p>
+          <p>
+            AI acknowledgment: ChatGPT (OpenAI, November 2026) assisted with the initial site
+            design, organization, and draft explanations. The author is responsible for reviewing
+            and personalizing the final content.
+          </p>
+        </div>
+        <div class="footer-right">
+          <a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Getting_started/Your_first_website" target="_blank" rel="noopener noreferrer">
+            Further reading: MDN Web Docs
+          </a>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

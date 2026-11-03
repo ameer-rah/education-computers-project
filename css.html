@@ -1,0 +1,190 @@
+<!doctype html>
+<!-- Lesson 3: how CSS controls the way a page looks. -->
+<html lang="en">
+  <head>
+    <!-- Page information for the browser and search engines. None of this appears on the page. -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="description" content="Build the Web: an approachable five-page guide to how websites work, HTML, CSS, and JavaScript.">
+    <title>CSS Basics | Build the Web</title>
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+
+    <!--
+      Skip link: stays off screen until a keyboard user presses Tab, then lets them jump straight to
+      the main content.
+    -->
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    <!--
+      Site header: the logo, author line, and navigation, repeated on every page.
+      aria-current="page" marks the page being viewed, and styles.css uses it to highlight that
+      link.
+    -->
+    <header class="site-header">
+      <div class="header-inner shell">
+        <a class="brand" href="index.html" aria-label="Build the Web, home">
+          <span class="brand-mark" aria-hidden="true">&lt;/&gt;</span>
+          <span>Build the Web</span>
+        </a>
+        <span class="byline">An educational site by Ameer Rahman</span>
+        <nav aria-label="Main navigation">
+          <a href="index.html">Home</a>
+          <a href="how-web-works.html">How the Web Works</a>
+          <a href="html.html">HTML Basics</a>
+          <a href="css.html" aria-current="page">CSS Basics</a>
+          <a href="javascript.html">JavaScript Basics</a>
+        </nav>
+      </div>
+    </header>
+
+    <!--
+      Hero banner: the large dark area at the top that introduces this page. aria-hidden hides the
+      decorative symbol from screen readers.
+    -->
+    <section class="hero">
+      <div class="hero-inner shell">
+        <span class="eyebrow">LESSON 03 · 04 / 05</span>
+        <h1>CSS makes the page feel intentional</h1>
+        <p class="hero-lead">
+          Once your content is organized, CSS helps you choose how it is presented across phones,
+          tablets, and computers.
+        </p>
+        <div class="hero-meta">
+          <span class="hero-chip">Beginner-friendly</span>
+          <span class="hero-chip">No experience needed</span>
+        </div>
+        <div class="hero-visual" aria-hidden="true">&lt; / &gt;</div>
+      </div>
+    </section>
+
+    <!--
+      Main content. Each section's aria-labelledby points to the id of its heading, so screen
+      readers can announce the section's name.
+    -->
+    <main class="main shell" id="main">
+
+      <!-- Section 01: What CSS controls -->
+      <section class="section" aria-labelledby="style">
+        <div class="section-heading">
+          <span class="section-number">01 / FORM MEETS FUNCTION</span>
+          <h2 id="style">What CSS controls</h2>
+        </div>
+        <p>
+          CSS stands for <strong>Cascading Style Sheets</strong>. It describes the visual
+          presentation of HTML elements. You can use it to adjust colors, fonts, sizes, spacing,
+          borders, and how sections are arranged next to one another.
+        </p>
+        <p>
+          A good design is more than decoration. Clear headings help readers find information,
+          comfortable spacing makes text easier to read, and layouts that adapt to narrow screens
+          make the site usable on more devices.
+        </p>
+
+        <!-- Before and after demo: the same content without and with styling. -->
+        <div class="before-after">
+          <div class="demo-box demo-plain">
+            <span>WITHOUT CSS</span>
+            <div class="mini-title">Welcome</div>
+            <p>A page with content but very little visual hierarchy.</p>
+          </div>
+          <div class="demo-box demo-styled">
+            <span>WITH CSS</span>
+            <div class="mini-title">Welcome</div>
+            <p>The same idea with more deliberate spacing and contrast.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Section 02: A selector and a set of styles -->
+      <section class="section" aria-labelledby="rules">
+        <div class="section-heading">
+          <span class="section-number">02 / READ A RULE</span>
+          <h2 id="rules">A selector and a set of styles</h2>
+        </div>
+        <p>
+          CSS rules have a <strong>selector</strong>, which identifies which elements to style, and
+          <strong>declarations</strong>, which say what to change. Here, the selector is
+          <code>h1</code>, so these styles affect main headings.
+        </p>
+
+        <!--
+          Code sample: pre keeps the line breaks and spaces exactly as typed, and &lt; and &gt;
+          display as angle brackets instead of being read as real tags.
+        -->
+        <div class="code-card">
+          <div class="code-top">
+            <span>STYLE.CSS</span>
+            <span>CSS</span>
+          </div>
+          <pre><code>h1 {
+  color: #176b63;
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}</code></pre>
+        </div>
+        <p>
+          The <code>color</code> value changes text color, <code>font-size</code> changes its size,
+          and <code>margin-bottom</code> adds space below it. CSS works best when you make one
+          change at a time and check the result.
+        </p>
+      </section>
+
+      <!-- Section 03: Why responsive design matters -->
+      <section class="section" aria-labelledby="responsive">
+        <div class="section-heading">
+          <span class="section-number">03 / DESIGN FOR EVERYONE</span>
+          <h2 id="responsive">Why responsive design matters</h2>
+        </div>
+        <p>
+          A design that looks great on a wide laptop can feel crowded on a phone. Responsive layouts
+          adjust to the available space, often stacking cards and simplifying navigation on small
+          screens.
+        </p>
+
+        <!-- Takeaway box: the key point or a small exercise. -->
+        <div class="takeaway">
+          <strong>Try it yourself</strong>
+          <p>
+            Make a simple page with a heading and two paragraphs. Add a background color and adjust
+            the text size. Then resize your browser window to see whether it stays readable.
+          </p>
+        </div>
+        <p>
+          When the style matches the content, the reader can focus on the information instead of
+          fighting the layout. That is the real goal of CSS.
+        </p>
+      </section>
+
+      <!-- Link to the next page in the suggested reading order. -->
+      <div class="next">
+        <div>
+          <strong>KEEP EXPLORING</strong>
+          <p>JavaScript Basics</p>
+        </div>
+        <a href="javascript.html">JavaScript Basics <span aria-hidden="true">↗</span></a>
+      </div>
+    </main>
+
+    <!-- Site footer: repeated on every page. -->
+    <footer class="site-footer">
+      <div class="footer-inner shell">
+        <div class="footer-left">
+          <strong>Build the Web</strong>
+          <p>An introductory educational website by Ameer Rahman</p>
+          <p>
+            AI acknowledgment: ChatGPT (OpenAI, November 2026) assisted with the initial site
+            design, organization, and draft explanations. The author is responsible for reviewing
+            and personalizing the final content.
+          </p>
+        </div>
+        <div class="footer-right">
+          <a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Getting_started/Your_first_website" target="_blank" rel="noopener noreferrer">
+            Further reading: MDN Web Docs
+          </a>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

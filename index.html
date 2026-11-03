@@ -1,0 +1,198 @@
+<!doctype html>
+<!-- Home page: introduces the site and links to the four lessons. -->
+<html lang="en">
+  <head>
+    <!-- Page information for the browser and search engines. None of this appears on the page. -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="description" content="Build the Web: an approachable five-page guide to how websites work, HTML, CSS, and JavaScript.">
+    <title>Home | Build the Web</title>
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+
+    <!--
+      Skip link: stays off screen until a keyboard user presses Tab, then lets them jump straight to
+      the main content.
+    -->
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    <!--
+      Site header: the logo, author line, and navigation, repeated on every page.
+      aria-current="page" marks the page being viewed, and styles.css uses it to highlight that
+      link.
+    -->
+    <header class="site-header">
+      <div class="header-inner shell">
+        <a class="brand" href="index.html" aria-label="Build the Web, home">
+          <span class="brand-mark" aria-hidden="true">&lt;/&gt;</span>
+          <span>Build the Web</span>
+        </a>
+        <span class="byline">An educational site by Ameer Rahman</span>
+        <nav aria-label="Main navigation">
+          <a href="index.html" aria-current="page">Home</a>
+          <a href="how-web-works.html">How the Web Works</a>
+          <a href="html.html">HTML Basics</a>
+          <a href="css.html">CSS Basics</a>
+          <a href="javascript.html">JavaScript Basics</a>
+        </nav>
+      </div>
+    </header>
+
+    <!--
+      Hero banner: the large dark area at the top that introduces this page. aria-hidden hides the
+      decorative symbol from screen readers.
+    -->
+    <section class="hero">
+      <div class="hero-inner shell">
+        <span class="eyebrow">START HERE · 01 / 05</span>
+        <h1>The web starts with an idea</h1>
+        <p class="hero-lead">
+          You do not need to be an expert to understand how websites are made. You just need a
+          little curiosity and a willingness to experiment.
+        </p>
+        <div class="hero-meta">
+          <span class="hero-chip">Beginner-friendly</span>
+          <span class="hero-chip">No experience needed</span>
+        </div>
+        <div class="hero-visual" aria-hidden="true">&lt; / &gt;</div>
+      </div>
+    </section>
+
+    <!--
+      Main content. Each section's aria-labelledby points to the id of its heading, so screen
+      readers can announce the section's name.
+    -->
+    <main class="main shell" id="main">
+
+      <!-- Section 01: What does it mean to build a website -->
+      <section class="section" aria-labelledby="intro">
+        <div class="section-heading">
+          <span class="section-number">01 / THE BIG PICTURE</span>
+          <h2 id="intro">What does it mean to build a website</h2>
+        </div>
+        <p>
+          Every website begins with something someone wants to share, explain, or make easier. A
+          website can be a digital notebook, a store, a class resource, or a tool that solves a real
+          problem. Web development is the process of turning that idea into something people can
+          open in a browser.
+        </p>
+        <p>
+          Most websites are built from three foundational technologies: <strong>HTML</strong>
+          organizes the content, <strong>CSS</strong> decides how it looks, and
+          <strong>JavaScript</strong> helps it respond to people. Each one has a different job, and
+          learning to separate those jobs makes programming much less intimidating.
+        </p>
+
+        <!-- Three cards, one for each technology. styles.css arranges them in a row. -->
+        <div class="feature-grid">
+          <article class="feature">
+            <span class="feature-symbol">&lt;/&gt;</span>
+            <h3>HTML</h3>
+            <p>The structure: headings, paragraphs, links, and other content.</p>
+            <a href="html.html">Explore HTML <span aria-hidden="true">↗</span></a>
+          </article>
+          <article class="feature">
+            <span class="feature-symbol">#</span>
+            <h3>CSS</h3>
+            <p>The presentation: spacing, color, typography, and layout.</p>
+            <a href="css.html">Explore CSS <span aria-hidden="true">↗</span></a>
+          </article>
+          <article class="feature">
+            <span class="feature-symbol">{ }</span>
+            <h3>JavaScript</h3>
+            <p>The behavior: clicks, changing information, and interactions.</p>
+            <a href="javascript.html">Explore JavaScript <span aria-hidden="true">↗</span></a>
+          </article>
+        </div>
+      </section>
+
+      <!-- Section 02: Small changes become real results -->
+      <section class="section" aria-labelledby="why">
+        <div class="section-heading">
+          <span class="section-number">02 / WHY LEARN IT</span>
+          <h2 id="why">Small changes become real results</h2>
+        </div>
+        <p>
+          One thing that makes web development rewarding is the feedback. Change a line of code,
+          refresh your browser, and you can see what happened. It is normal for the first version to
+          look simple. Each improvement gives you a better understanding of the page and more
+          control over what you can create.
+        </p>
+
+        <!-- Highlighted quote. -->
+        <div class="quote-card">
+          <p>
+            Think of this guide as a tour of the building blocks, not a race to master every
+            programming language.
+          </p>
+          <span>THE GOAL: UNDERSTAND WHAT EACH PIECE DOES</span>
+        </div>
+      </section>
+
+      <!-- Section 03: A simple learning roadmap -->
+      <section class="section" aria-labelledby="roadmap">
+        <div class="section-heading">
+          <span class="section-number">03 / YOUR PATH</span>
+          <h2 id="roadmap">A simple learning roadmap</h2>
+        </div>
+
+        <!--
+          Numbered steps. The numbers are drawn by styles.css (see .steps li:before), not typed
+          here.
+        -->
+        <ol class="steps">
+          <li>
+            <strong>Understand the journey</strong>
+            <span>Learn what happens when you visit a web address.</span>
+          </li>
+          <li>
+            <strong>Write a little HTML</strong>
+            <span>Build a page with a heading, text, and a link.</span>
+          </li>
+          <li>
+            <strong>Make it yours with CSS</strong>
+            <span>Experiment with colors, spacing, and layout.</span>
+          </li>
+          <li>
+            <strong>Try JavaScript</strong>
+            <span>Make a button change something on the page.</span>
+          </li>
+        </ol>
+        <p>
+          You can follow these lessons in order or visit the section that interests you most. The
+          examples are intentionally small so you can try them yourself.
+        </p>
+      </section>
+
+      <!-- Link to the next page in the suggested reading order. -->
+      <div class="next">
+        <div>
+          <strong>KEEP EXPLORING</strong>
+          <p>How the Web Works</p>
+        </div>
+        <a href="how-web-works.html">How the Web Works <span aria-hidden="true">↗</span></a>
+      </div>
+    </main>
+
+    <!-- Site footer: repeated on every page. -->
+    <footer class="site-footer">
+      <div class="footer-inner shell">
+        <div class="footer-left">
+          <strong>Build the Web</strong>
+          <p>An introductory educational website by Ameer Rahman</p>
+          <p>
+            AI acknowledgment: ChatGPT (OpenAI, November 2026) assisted with the initial site
+            design, organization, and draft explanations. The author is responsible for reviewing
+            and personalizing the final content.
+          </p>
+        </div>
+        <div class="footer-right">
+          <a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Getting_started/Your_first_website" target="_blank" rel="noopener noreferrer">
+            Further reading: MDN Web Docs
+          </a>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

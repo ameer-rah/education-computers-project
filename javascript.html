@@ -1,0 +1,224 @@
+<!doctype html>
+<!-- Lesson 4: how JavaScript lets a page react to people. -->
+<html lang="en">
+  <head>
+    <!-- Page information for the browser and search engines. None of this appears on the page. -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="description" content="Build the Web: an approachable five-page guide to how websites work, HTML, CSS, and JavaScript.">
+    <title>JavaScript Basics | Build the Web</title>
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+
+    <!--
+      Skip link: stays off screen until a keyboard user presses Tab, then lets them jump straight to
+      the main content.
+    -->
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    <!--
+      Site header: the logo, author line, and navigation, repeated on every page.
+      aria-current="page" marks the page being viewed, and styles.css uses it to highlight that
+      link.
+    -->
+    <header class="site-header">
+      <div class="header-inner shell">
+        <a class="brand" href="index.html" aria-label="Build the Web, home">
+          <span class="brand-mark" aria-hidden="true">&lt;/&gt;</span>
+          <span>Build the Web</span>
+        </a>
+        <span class="byline">An educational site by Ameer Rahman</span>
+        <nav aria-label="Main navigation">
+          <a href="index.html">Home</a>
+          <a href="how-web-works.html">How the Web Works</a>
+          <a href="html.html">HTML Basics</a>
+          <a href="css.html">CSS Basics</a>
+          <a href="javascript.html" aria-current="page">JavaScript Basics</a>
+        </nav>
+      </div>
+    </header>
+
+    <!--
+      Hero banner: the large dark area at the top that introduces this page. aria-hidden hides the
+      decorative symbol from screen readers.
+    -->
+    <section class="hero">
+      <div class="hero-inner shell">
+        <span class="eyebrow">LESSON 04 · 05 / 05</span>
+        <h1>JavaScript makes websites respond</h1>
+        <p class="hero-lead">
+          HTML provides content. CSS adds visual design. JavaScript makes it possible for a page to
+          react when someone does something.
+        </p>
+        <div class="hero-meta">
+          <span class="hero-chip">Beginner-friendly</span>
+          <span class="hero-chip">No experience needed</span>
+        </div>
+        <div class="hero-visual" aria-hidden="true">&lt; / &gt;</div>
+      </div>
+    </section>
+
+    <!--
+      Main content. Each section's aria-labelledby points to the id of its heading, so screen
+      readers can announce the section's name.
+    -->
+    <main class="main shell" id="main">
+
+      <!-- Section 01: From a static page to an experience -->
+      <section class="section" aria-labelledby="behavior">
+        <div class="section-heading">
+          <span class="section-number">01 / ADDING BEHAVIOR</span>
+          <h2 id="behavior">From a static page to an experience</h2>
+        </div>
+        <p>
+          JavaScript is a programming language commonly used to add behavior to webpages. It can
+          help a page check a form, update information, open a menu, or respond when a button is
+          clicked. This is what makes many websites feel interactive rather than fixed.
+        </p>
+        <p>
+          A useful way to understand JavaScript is to think about <strong>events</strong>. An event
+          is something that happens, such as a click or a key press. JavaScript can listen for that
+          event and run code in response.
+        </p>
+
+        <!--
+          Code sample: pre keeps the line breaks and spaces exactly as typed, and &lt; and &gt;
+          display as angle brackets instead of being read as real tags.
+        -->
+        <div class="code-card">
+          <div class="code-top">
+            <span>APP.JS</span>
+            <span>JAVASCRIPT</span>
+          </div>
+          <pre><code>const button = document.querySelector("button");
+
+button.addEventListener("click", () =&gt; {
+  button.textContent = "You clicked me!";
+});</code></pre>
+        </div>
+        <p>
+          First, the code finds a button on the page. Next, it waits for a click. When the click
+          happens, the button's words change. A small behavior like this is the starting point for
+          more complex features.
+        </p>
+      </section>
+
+      <!-- Section 02: How the three pieces work together -->
+      <section class="section" aria-labelledby="together">
+        <div class="section-heading">
+          <span class="section-number">02 / THE FULL PICTURE</span>
+          <h2 id="together">How the three pieces work together</h2>
+        </div>
+
+        <!-- Side-by-side comparison cards. -->
+        <div class="split-grid three">
+          <div class="simple-card">
+            <span class="pill-label">HTML</span>
+            <h3>The content</h3>
+            <p>Creates the button on the page.</p>
+          </div>
+          <div class="simple-card">
+            <span class="pill-label">CSS</span>
+            <h3>The appearance</h3>
+            <p>Gives the button a shape, size, and color.</p>
+          </div>
+          <div class="simple-card">
+            <span class="pill-label">JAVASCRIPT</span>
+            <h3>The response</h3>
+            <p>Changes the button after a click.</p>
+          </div>
+        </div>
+        <p>
+          Once you understand these three roles, it becomes easier to explore modern frameworks, web
+          applications, and larger projects. The tools may become more advanced, but the basic ideas
+          remain useful.
+        </p>
+      </section>
+
+      <!-- Section 03: A practical next step -->
+      <section class="section" aria-labelledby="next">
+        <div class="section-heading">
+          <span class="section-number">03 / KEEP LEARNING</span>
+          <h2 id="next">A practical next step</h2>
+        </div>
+        <p>
+          Try creating a personal interests page with a heading, a short description, and a link.
+          Then style it with CSS. After that, add a button using JavaScript and make it change a
+          sentence. Each stage should work before you move to the next.
+        </p>
+
+        <!--
+          External links: target="_blank" opens a new tab, and rel="noopener noreferrer" stops the
+          new page from controlling this one.
+        -->
+        <div class="resources">
+          <h3>Free learning resources</h3>
+          <p>
+            These references can help you check your understanding and practice beyond this guide.
+          </p>
+          <ul>
+            <li>
+              <a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Getting_started/Your_first_website" target="_blank" rel="noopener noreferrer">
+                MDN's first website guide <span aria-hidden="true">↗</span>
+              </a>
+            </li>
+            <li>
+              <a href="https://developer.mozilla.org/en-US/docs/Web/HTML" target="_blank" rel="noopener noreferrer">
+                MDN HTML documentation <span aria-hidden="true">↗</span>
+              </a>
+            </li>
+            <li>
+              <a href="https://developer.mozilla.org/en-US/docs/Web/CSS" target="_blank" rel="noopener noreferrer">
+                MDN CSS documentation <span aria-hidden="true">↗</span>
+              </a>
+            </li>
+            <li>
+              <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" target="_blank" rel="noopener noreferrer">
+                MDN JavaScript documentation <span aria-hidden="true">↗</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Takeaway box: the key point or a small exercise. -->
+        <div class="takeaway">
+          <strong>The most important habit</strong>
+          <p>
+            Build something small, test what you made, and try to explain why it works.
+            Understanding grows through practice, not memorizing code line by line.
+          </p>
+        </div>
+      </section>
+
+      <!-- Link to the next page in the suggested reading order. -->
+      <div class="next">
+        <div>
+          <strong>KEEP EXPLORING</strong>
+          <p>Back to Home</p>
+        </div>
+        <a href="index.html">Back to Home <span aria-hidden="true">↗</span></a>
+      </div>
+    </main>
+
+    <!-- Site footer: repeated on every page. -->
+    <footer class="site-footer">
+      <div class="footer-inner shell">
+        <div class="footer-left">
+          <strong>Build the Web</strong>
+          <p>An introductory educational website by Ameer Rahman</p>
+          <p>
+            AI acknowledgment: ChatGPT (OpenAI, November 2026) assisted with the initial site
+            design, organization, and draft explanations. The author is responsible for reviewing
+            and personalizing the final content.
+          </p>
+        </div>
+        <div class="footer-right">
+          <a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Getting_started/Your_first_website" target="_blank" rel="noopener noreferrer">
+            Further reading: MDN Web Docs
+          </a>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
