@@ -9,16 +9,14 @@ Author shown: Ameer Rahman. Confirm this before submitting.
 - Reader survey (embedded Google Form) on the Home page, linked from every footer
 - Working internal navigation and readable link labels
 - Page titles are not punctuated
-- AI acknowledgment included in the footer of each page
 
 ## Your important edits before submission
 1. Read all five pages and rewrite examples and sentences so the explanations reflect your own voice and experience. Your instructor specifically requests that.
 2. Check the name in the header and footer.
 3. Add one or two true personal observations about why you care about coding and what you have learned from projects; do not claim experiences you did not have.
 4. Check whether the separately linked Website Creator Project document has more requirements than the Canvas instructions pasted in the chat. That DOCX file was not accessible through the public Rutgers Canvas link.
-5. Confirm the AI citation matches your course's required format.
-6. Create the reader survey in Google Forms and paste its embed link into `index.html` (search for PASTE-GOOGLE-FORM-EMBED-LINK-HERE).
-7. Test every page on phone and desktop, proofread, and check all links.
+5. In the Google Form's settings, turn on "View results summary" so readers can compare their answers.
+6. Test every page on phone and desktop, proofread, and check all links.
 
 
 Official publishing instructions: https://docs.github.com/en/pages/getting-started-with-github-pages/configuring-a-publishing-source-for-your-github-pages-site
