@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 330" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif">
+  <rect width="900" height="330" fill="#f1f6ed"/>
+  <g font-size="17" font-weight="700" fill="#1b2927" text-anchor="middle">
+    <text x="155" y="50">HTML only</text>
+    <text x="450" y="50">HTML + CSS</text>
+    <text x="745" y="50">HTML + CSS + JavaScript</text>
+  </g>
+  <g transform="translate(30 70)">
+    <rect width="250" height="200" rx="14" fill="#ffffff" stroke="#c9d7c9" stroke-width="2"/>
+    <path d="M0 14a14 14 0 0 1 14-14h222a14 14 0 0 1 14 14v12H0z" fill="#e8f1e5"/>
+    <circle cx="16" cy="13" r="4" fill="#c9d7c9"/><circle cx="30" cy="13" r="4" fill="#c9d7c9"/><circle cx="44" cy="13" r="4" fill="#c9d7c9"/>
+    <rect x="20" y="44" width="130" height="14" fill="#1b2927"/>
+    <rect x="20" y="72" width="210" height="7" fill="#9aa59f"/>
+    <rect x="20" y="86" width="190" height="7" fill="#9aa59f"/>
+    <rect x="20" y="100" width="200" height="7" fill="#9aa59f"/>
+    <rect x="20" y="140" width="70" height="26" fill="#ffffff" stroke="#1b2927"/>
+    <text x="55" y="158" font-size="12" text-anchor="middle" font-family="Times New Roman, serif" fill="#1b2927">Click me</text>
+  </g>
+  <g transform="translate(325 70)">
+    <rect width="250" height="200" rx="14" fill="#ffffff" stroke="#c9d7c9" stroke-width="2"/>
+    <path d="M0 14a14 14 0 0 1 14-14h222a14 14 0 0 1 14 14v12H0z" fill="#e8f1e5"/>
+    <circle cx="16" cy="13" r="4" fill="#c9d7c9"/><circle cx="30" cy="13" r="4" fill="#c9d7c9"/><circle cx="44" cy="13" r="4" fill="#c9d7c9"/>
+    <rect x="0" y="26" width="250" height="44" fill="#112722"/>
+    <rect x="18" y="41" width="110" height="14" rx="7" fill="#b9f377"/>
+    <rect x="18" y="86" width="200" height="7" rx="3.5" fill="#c9d7c9"/>
+    <rect x="18" y="100" width="170" height="7" rx="3.5" fill="#c9d7c9"/>
+    <rect x="18" y="114" width="185" height="7" rx="3.5" fill="#c9d7c9"/>
+    <rect x="18" y="140" width="90" height="32" rx="16" fill="#1f584c"/>
+    <text x="63" y="161" font-size="12" font-weight="700" text-anchor="middle" fill="#ffffff">Click me</text>
+  </g>
+  <g transform="translate(620 70)">
+    <rect width="250" height="200" rx="14" fill="#ffffff" stroke="#c9d7c9" stroke-width="2"/>
+    <path d="M0 14a14 14 0 0 1 14-14h222a14 14 0 0 1 14 14v12H0z" fill="#e8f1e5"/>
+    <circle cx="16" cy="13" r="4" fill="#c9d7c9"/><circle cx="30" cy="13" r="4" fill="#c9d7c9"/><circle cx="44" cy="13" r="4" fill="#c9d7c9"/>
+    <rect x="0" y="26" width="250" height="44" fill="#112722"/>
+    <rect x="18" y="41" width="110" height="14" rx="7" fill="#b9f377"/>
+    <rect x="18" y="86" width="200" height="7" rx="3.5" fill="#c9d7c9"/>
+    <rect x="18" y="100" width="170" height="7" rx="3.5" fill="#c9d7c9"/>
+    <rect x="18" y="114" width="185" height="7" rx="3.5" fill="#c9d7c9"/>
+    <circle cx="63" cy="156" r="30" fill="#b9f377" opacity="0.35"/>
+    <rect x="18" y="140" width="90" height="32" rx="16" fill="#b9f377"/>
+    <text x="63" y="161" font-size="12" font-weight="700" text-anchor="middle" fill="#112722">Clicked!</text>
+    <path d="M100 160l0 26 7-7 5 11 5-2-5-11 10 0z" fill="#112722" stroke="#ffffff" stroke-width="1.5" stroke-linejoin="round"/>
+  </g>
+  <g fill="none" stroke="#3f7556" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M288 170h30m-8-8l8 8-8 8"/>
+    <path d="M583 170h30m-8-8l8 8-8 8"/>
+  </g>
+  <g font-size="15" fill="#54655f" text-anchor="middle">
+    <text x="155" y="305">Structure: the content exists</text>
+    <text x="450" y="305">Presentation: it looks designed</text>
+    <text x="745" y="305">Behavior: it reacts to a click</text>
+  </g>
+</svg>

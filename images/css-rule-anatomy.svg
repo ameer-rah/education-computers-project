@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 860 340" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif">
+  <rect width="860" height="340" fill="#f1f6ed"/>
+  <rect x="40" y="40" width="400" height="270" rx="16" fill="#142722"/>
+  <g font-family="ui-monospace, Menlo, Consolas, monospace" font-size="30" fill="#d9efda">
+    <text x="80" y="100" textLength="36" lengthAdjust="spacingAndGlyphs" fill="#b9f377">h1</text>
+    <text x="134" y="100" textLength="18" lengthAdjust="spacingAndGlyphs">{</text>
+    <text x="116" y="175" textLength="90" lengthAdjust="spacingAndGlyphs" fill="#ffffff">color</text>
+    <text x="206" y="175" textLength="18" lengthAdjust="spacingAndGlyphs">:</text>
+    <text x="242" y="175" textLength="126" lengthAdjust="spacingAndGlyphs" fill="#b9f377">#176b63</text>
+    <text x="368" y="175" textLength="18" lengthAdjust="spacingAndGlyphs">;</text>
+    <text x="80" y="280" textLength="18" lengthAdjust="spacingAndGlyphs">}</text>
+  </g>
+  <g fill="none" stroke="#7fa98a" stroke-width="2">
+    <path d="M116 188V196H206V188"/>
+    <path d="M242 188V196H368V188"/>
+  </g>
+  <g font-size="15" fill="#c4d8c5" text-anchor="middle">
+    <text x="161" y="222">property</text>
+    <text x="305" y="222">value</text>
+  </g>
+  <g fill="none" stroke="#3f7556" stroke-width="2" stroke-dasharray="4 4">
+    <path d="M162 90H470"/>
+    <path d="M394 165H470"/>
+    <path d="M106 270H470"/>
+  </g>
+  <g fill="#3f7556"><circle cx="470" cy="90" r="4"/><circle cx="470" cy="165" r="4"/><circle cx="470" cy="270" r="4"/></g>
+  <g font-size="19" font-weight="700" fill="#1b2927">
+    <text x="486" y="88">Selector</text>
+    <text x="486" y="163">Declaration</text>
+    <text x="486" y="268">Declaration block</text>
+  </g>
+  <g font-size="15" fill="#54655f">
+    <text x="486" y="110">which elements to style (every h1)</text>
+    <text x="486" y="185">one property and its value</text>
+    <text x="486" y="290">all the styles between { and }</text>
+  </g>
+</svg>
